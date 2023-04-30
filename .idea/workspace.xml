@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2P8iAGzxjmMFVVDRCX9MbCKHUeA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,16 +43,19 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Алина/IdeaProjects/lab6_proga/common/src/main/java/models"
+    "last_opened_file_path": "C:/Users/Алина/IdeaProjects/lab6_proga",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\managers" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\common\src\main\java\models" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\forms" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\console" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\common\src\main\java\exceptions" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="managers" />
@@ -64,7 +70,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682844966053</updated>
-      <workItem from="1682844967430" duration="1363000" />
+      <workItem from="1682844967430" duration="1590000" />
+      <workItem from="1682846579743" duration="196000" />
     </task>
     <servers />
   </component>
