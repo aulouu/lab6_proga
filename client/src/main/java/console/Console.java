@@ -5,7 +5,6 @@ package console;
  */
 
 public class Console implements Print {
-
     @Override
     public void println(String str) {
         System.out.println(str);

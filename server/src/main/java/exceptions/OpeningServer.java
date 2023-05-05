@@ -1,4 +1,8 @@
 package exceptions;
 
-public class OpeningServer extends Exception{
+/**
+ * Исключение для ошибки запуска сервера
+ */
+
+public class OpeningServer extends Exception {
 }

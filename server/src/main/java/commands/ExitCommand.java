@@ -1,6 +1,5 @@
 package commands;
 
-import exceptions.*;
 import work.*;
 
 /**
@@ -8,7 +7,6 @@ import work.*;
  */
 
 public class ExitCommand extends Command {
-
     public ExitCommand() {
         super("exit", " : завершить программу без сохранения в файл");
     }

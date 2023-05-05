@@ -11,7 +11,8 @@ public class App {
 
     private static boolean initializeConnectionAddress(String[] hostAndPortArgs) {
         try {
-            if (hostAndPortArgs.length != 2) throw new IllegalArgument("Хост и порт необходимо передать в формате <host> <port>");
+            if (hostAndPortArgs.length != 2)
+                throw new IllegalArgument("Хост и порт необходимо передать в формате <host> <port>");
             host = hostAndPortArgs[0];
             port = Integer.parseInt(hostAndPortArgs[1]);
             if (port < 0) throw new IllegalArgument("Порт не может быть отрицательным.");

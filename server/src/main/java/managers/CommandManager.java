@@ -1,15 +1,14 @@
 package managers;
 
-import commands.Command;
-import commands.EditCollection;
+import commands.*;
 import exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import work.Request;
-import work.Response;
+import work.*;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 /**
  * Командный менеджер - класс для управления командами
@@ -29,11 +28,12 @@ public class CommandManager {
     /**
      * Добавляет команду
      *
-     * @param command комманда
+     * @param commands комманды
      */
-    public void addCommand(Command command) {
-        this.commands.put(command.getName(), command);
-        commandManagerLogger.info("Добавлена команда " + command);
+    public void addCommand(Collection<Command> commands) {
+        this.commands.putAll(commands.stream()
+                .collect(Collectors.toMap(Command::getName, с -> с)));
+        commandManagerLogger.info("Добавлены команда ", commands);
     }
 
     /**

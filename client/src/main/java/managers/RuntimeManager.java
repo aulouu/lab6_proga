@@ -30,7 +30,7 @@ public class RuntimeManager {
     }
 
     public void printResponse(Response response) {
-        switch (response.getResponseStatus()){
+        switch (response.getResponseStatus()) {
             case OK -> {
                 if ((Objects.isNull(response.getCollection()))) {
                     console.println(response.getResponse());
@@ -40,7 +40,8 @@ public class RuntimeManager {
             }
             case ERROR -> console.printError(response.getResponse());
             case WRONG_ARGUMENTS -> console.printError("Неверное использование команды.");
-            default -> {}
+            default -> {
+            }
         }
     }
 
@@ -58,16 +59,15 @@ public class RuntimeManager {
                 switch (response.getResponseStatus()) {
                     case ASK_OBJECT -> {
                         Worker worker = new WorkerForm(console).build();
-                        if(!worker.validate()) throw new InvalidForm();
+                        if (!worker.validate()) throw new InvalidForm();
                         Response newResponse = client.sendAndAskResponse(
                                 new Request(
                                         userCommand[0].trim(),
                                         userCommand[1].trim(),
                                         worker));
-                        if (newResponse.getResponseStatus() != ResponseStatus.OK){
+                        if (newResponse.getResponseStatus() != ResponseStatus.OK) {
                             console.printError(newResponse.getResponse());
-                        }
-                        else {
+                        } else {
                             this.printResponse(newResponse);
                         }
                     }
@@ -77,7 +77,8 @@ public class RuntimeManager {
                         this.script(response.getResponse());
                         ScannerManager.setUserMode();
                     }
-                    default -> {}
+                    default -> {
+                    }
                 }
             } catch (NoSuchElementException exception) {
                 console.printError("Пользовательский ввод не обнаружен.");
@@ -108,7 +109,7 @@ public class RuntimeManager {
                     userCmd = (scrScanner.nextLine().trim() + " ").split(" ", 2);
                 }
                 if (userCmd[0].equals("execute_script")) {
-                    if(Stack.contains(Paths.get(userCmd[1].trim())))
+                    if (Stack.contains(Paths.get(userCmd[1].trim())))
                         throw new RecursionScript();
                 }
                 console.println("$ " + String.join(" ", userCmd));
@@ -117,16 +118,15 @@ public class RuntimeManager {
                 switch (response.getResponseStatus()) {
                     case ASK_OBJECT -> {
                         Worker worker = new WorkerForm(console).build();
-                        if(!worker.validate()) throw new InvalidForm();
+                        if (!worker.validate()) throw new InvalidForm();
                         Response newResponse = client.sendAndAskResponse(
                                 new Request(
                                         userCmd[0].trim(),
                                         userCmd[1].trim(),
                                         worker));
-                        if (newResponse.getResponseStatus() != ResponseStatus.OK){
+                        if (newResponse.getResponseStatus() != ResponseStatus.OK) {
                             console.printError(newResponse.getResponse());
-                        }
-                        else {
+                        } else {
                             this.printResponse(newResponse);
                         }
                     }
@@ -134,7 +134,8 @@ public class RuntimeManager {
                     case EXECUTE_SCRIPT -> {
                         this.script(response.getResponse());
                     }
-                    default -> {}
+                    default -> {
+                    }
                 }
             } while (scrScanner.hasNextLine());
             ScannerManager.setScanner(tmpScanner);

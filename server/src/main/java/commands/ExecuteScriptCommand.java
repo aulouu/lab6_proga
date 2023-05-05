@@ -8,7 +8,6 @@ import work.*;
  */
 
 public class ExecuteScriptCommand extends Command {
-
     public ExecuteScriptCommand() {
         super("execute_script", " file_name : считать и исполнить скрипт из указанного файла");
     }
