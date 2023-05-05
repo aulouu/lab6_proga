@@ -17,7 +17,6 @@ public class Server {
     private Print console = new EmptyConsole();
     private ServerSocket serverSocket;
     private RequestHandler requestHandler;
-    private FileManager fileManager;
 
     static final Logger serverLogger = LoggerFactory.getLogger(Server.class);
 
