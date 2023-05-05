@@ -7,4 +7,11 @@ import java.io.IOException;
  */
 
 public class IllegalArgument extends IOException {
+    public IllegalArgument() {
+
+    }
+
+    public IllegalArgument(String s) {
+        super(s);
+    }
 }

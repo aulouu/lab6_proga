@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="vvv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/exceptions/IllegalArgument.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/IllegalArgument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Алина/IdeaProjects/lab6_proga",
+    "last_opened_file_path": "D:/Prog_lab6-master",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -51,11 +53,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\commands" />
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\managers" />
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\console" />
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\exceptions" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\managers" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\common\src\main\java\models" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\forms" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\client\src\main\java\console" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="managers" />
@@ -71,8 +73,18 @@
       <option name="presentableId" value="Default" />
       <updated>1682844966053</updated>
       <workItem from="1682844967430" duration="1590000" />
-      <workItem from="1682846579743" duration="196000" />
+      <workItem from="1682846579743" duration="3770000" />
+      <workItem from="1682958217985" duration="4928000" />
+      <workItem from="1683049521050" duration="29769000" />
     </task>
+    <task id="LOCAL-00001" summary="vvv">
+      <created>1682846932394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682846932394</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,5 +100,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="vvv" />
+    <option name="LAST_COMMIT_MESSAGE" value="vvv" />
   </component>
 </project>

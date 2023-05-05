@@ -39,7 +39,7 @@ public class Worker implements Validator, Comparable<Worker> {
      *
      * @return следующий ID, чтобы они не повторялись
      */
-    private static int incNextId() {
+    public static int incNextId() {
         return nextID++;
     }
 
