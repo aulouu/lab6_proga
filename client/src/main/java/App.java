@@ -1,4 +1,3 @@
-import console.Console;
 import console.EmptyConsole;
 import console.Print;
 import exceptions.IllegalArgument;

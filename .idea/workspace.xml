@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="ono ne rabotaet((((">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="pam">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +61,7 @@
       <recent name="console" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App (1)">
+  <component name="RunManager" selected="Maven.Compile All">
     <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="client" />
@@ -113,8 +109,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App (1)" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.App (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +129,7 @@
       <workItem from="1683309828098" duration="3862000" />
       <workItem from="1683441040181" duration="1110000" />
       <workItem from="1683463799025" duration="134000" />
-      <workItem from="1683494827330" duration="1188000" />
+      <workItem from="1683494827330" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="vvv">
       <created>1682846932394</created>
@@ -177,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683495441531</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="pam">
+      <created>1683496036760</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683496036760</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +204,7 @@
     <MESSAGE value="finall" />
     <MESSAGE value="ono ne rabotaet(((" />
     <MESSAGE value="ono ne rabotaet((((" />
-    <option name="LAST_COMMIT_MESSAGE" value="ono ne rabotaet((((" />
+    <MESSAGE value="pam" />
+    <option name="LAST_COMMIT_MESSAGE" value="pam" />
   </component>
 </project>
