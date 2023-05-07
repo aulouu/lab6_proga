@@ -1,6 +1,7 @@
 package managers;
 
 import console.Console;
+import console.Print;
 import work.*;
 
 import java.io.*;
@@ -13,12 +14,12 @@ public class Client {
     private int reconnectionTimeout;
     private int reconnectionAttempts;
     private int maxReconnectionAttempts;
-    private Console console;
+    private Print console;
     private SocketChannel socketChannel;
     private ObjectOutputStream serverWriter;
     private ObjectInputStream serverReader;
 
-    public Client(String host, int port, int reconnectionTimeout, int maxReconnectionAttempts, Console console) {
+    public Client(String host, int port, int reconnectionTimeout, int maxReconnectionAttempts, Print console) {
         this.host = host;
         this.port = port;
         this.reconnectionTimeout = reconnectionTimeout;

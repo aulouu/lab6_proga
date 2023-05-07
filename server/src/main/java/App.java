@@ -1,5 +1,7 @@
 import commands.*;
 import console.Console;
+import console.EmptyConsole;
+import console.Print;
 import managers.*;
 
 import java.util.List;
@@ -7,10 +9,10 @@ import java.util.List;
 public class App {
     public static int port = 6091;
     public static final int connection_timeout = 60 * 1000;
-    private static Console console;
+    private static final Print console = new EmptyConsole();
 
     public static void main(String[] args) {
-        console = new Console();
+        //console = new Console();
         if (args.length != 0) {
             try {
                 port = Integer.parseInt(args[0]);

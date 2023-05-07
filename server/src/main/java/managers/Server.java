@@ -14,7 +14,7 @@ import java.net.SocketTimeoutException;
 public class Server {
     private int port;
     private int soTimeout;
-    private Print console = new EmptyConsole();
+    private Print console;
     private ServerSocket serverSocket;
     private RequestHandler requestHandler;
 
@@ -24,6 +24,7 @@ public class Server {
         this.port = port;
         this.soTimeout = soTimeout;
         this.requestHandler = requestHandler;
+        this.console = new EmptyConsole();
     }
 
     /**

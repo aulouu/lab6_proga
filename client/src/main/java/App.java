@@ -1,11 +1,13 @@
 import console.Console;
+import console.EmptyConsole;
+import console.Print;
 import exceptions.IllegalArgument;
 import managers.*;
 
 import java.util.Scanner;
 
 public class App {
-    private static Console console;
+    private static Print console = new EmptyConsole();
     private static String host;
     private static int port;
 
@@ -25,7 +27,7 @@ public class App {
 
     public static void main(String[] args) {
         if (!initializeConnectionAddress(args)) return;
-        console = new Console();
+        //console = new Console();
         Client client = new Client(host, port, 10000, 5, console);
         new RuntimeManager(console, new Scanner(System.in), client).runTime();
     }
