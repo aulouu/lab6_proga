@@ -1,5 +1,4 @@
 import commands.*;
-import console.Console;
 import console.EmptyConsole;
 import console.Print;
 import managers.*;
