@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="fix">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="fix all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/RuntimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/RuntimeManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Алина/IdeaProjects/lab6_proga",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Prog_lab6-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\target\lib" />
@@ -66,28 +68,22 @@
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\exceptions" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="managers" />
       <recent name="console" />
+      <recent name="managers" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.Compile All">
-    <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="client" />
+      <option name="PROGRAM_PARAMETERS" value="localhost 6090" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="client" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,14 +115,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.App" />
-      <item itemvalue="Application.App (1)" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
       <item itemvalue="Maven.Compile All" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App (1)" />
-        <item itemvalue="Application.App" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +148,10 @@
       <workItem from="1683542051807" duration="714000" />
       <workItem from="1683562586037" duration="206000" />
       <workItem from="1683568469223" duration="127000" />
-      <workItem from="1683703282112" duration="2063000" />
+      <workItem from="1683703282112" duration="9191000" />
+      <workItem from="1683753867074" duration="281000" />
+      <workItem from="1683816432309" duration="136000" />
+      <workItem from="1684055988222" duration="4734000" />
     </task>
     <task id="LOCAL-00001" summary="vvv">
       <created>1682846932394</created>
@@ -224,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683542525389</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix all">
+      <created>1683705514703</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683705514703</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +258,7 @@
     <MESSAGE value="pampam" />
     <MESSAGE value="ono rabotaet!!!! 1 chas nochi i ya hochy spat((((" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fix all" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix all" />
   </component>
 </project>

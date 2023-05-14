@@ -1,4 +1,4 @@
-import console.EmptyConsole;
+import console.Console;
 import console.Print;
 import exceptions.IllegalArgument;
 import managers.*;
@@ -6,16 +6,16 @@ import managers.*;
 import java.util.Scanner;
 
 public class App {
-    private static Print console = new EmptyConsole();
+    private static Print console = new Console();
     private static String host;
     private static int port;
 
-    private static boolean initializeConnectionAddress(String[] hostAndPortArgs) {
+    private static boolean initializeConnectionAddress(String[] args) {
         try {
-            if (hostAndPortArgs.length != 2)
-                throw new IllegalArgument("Хост и порт необходимо передать в формате <host> <port>");
-            host = hostAndPortArgs[0];
-            port = Integer.parseInt(hostAndPortArgs[1]);
+            if (args.length != 2)
+                throw new IllegalArgument("Хост и порт необходимо передать в формате host port в аргументы командной строки.");
+            host = args[0];
+            port = Integer.parseInt(args[1]);
             if (port < 0) throw new IllegalArgument("Порт не может быть отрицательным.");
             return true;
         } catch (IllegalArgument exception) {

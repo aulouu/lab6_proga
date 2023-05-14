@@ -6,7 +6,9 @@ import work.*;
 
 import java.io.*;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.channels.SocketChannel;
+import java.util.Objects;
 
 public class Client {
     private String host;
@@ -27,6 +29,9 @@ public class Client {
         this.console = console;
     }
 
+    /**
+     * Подключение к серверу
+     */
     public void connectToServer() {
         try {
             if (reconnectionAttempts > 0)
@@ -55,7 +60,7 @@ public class Client {
         }
     }
 
-    public Response sendAndAskResponse(Request request) throws IOException {
+    /*public Response sendAndAskResponse(Request request) throws IOException {
         while (true) {
             try {
                 if (reconnectionAttempts == 0) {
@@ -63,6 +68,43 @@ public class Client {
                     reconnectionAttempts++;
                     continue;
                 }
+                if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
+                serverWriter.writeObject(request);
+                //serverWriter.flush();
+                //serverWriter.close();
+                Response response = (Response) serverReader.readObject();
+                //serverReader.close();
+                this.disconnectFromServer();
+                reconnectionAttempts = 0;
+                return response;
+            } catch (IOException exception) {
+                if (reconnectionAttempts == 0) {
+                    connectToServer();
+                    reconnectionAttempts++;
+                    continue;
+                } else console.printError("Соединение с сервером разорвано.");
+                try {
+                    reconnectionAttempts++;
+                    if (reconnectionAttempts >= maxReconnectionAttempts) {
+                        console.printError("Превышено максимальное количество попыток соединения с сервером");
+                        return new Response(ResponseStatus.EXIT);
+                    }
+                    console.println("Повторная попытка...");
+                    Thread.sleep(reconnectionTimeout);
+                    connectToServer();
+                } catch (InterruptedException e) {
+                    console.printError("Неуспешное соединение с сервером.");
+                }
+            } catch (ClassNotFoundException exception) {
+                console.printError("Неизвестная ошибка.");
+            }
+        }
+    }*/
+
+    public Response sendAndAskResponse (Request request) {
+        while (true) {
+            try {
+                if(Objects.isNull(serverWriter) || Objects.isNull(serverReader)) throw new IOException();
                 if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
                 serverWriter.writeObject(request);
                 //serverWriter.flush();

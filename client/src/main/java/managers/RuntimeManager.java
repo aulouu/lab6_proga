@@ -49,7 +49,7 @@ public class RuntimeManager {
      * Работа с пользователем и выполнение команд
      */
     public void runTime() {
-        Scanner scanner = ScannerManager.getScanner();
+        //Scanner scanner = ScannerManager.getScanner();
         while (true) {
             try {
                 if (!scanner.hasNext()) throw new MustExit();
@@ -58,6 +58,7 @@ public class RuntimeManager {
                 this.printResponse(response);
                 switch (response.getResponseStatus()) {
                     case ASK_OBJECT -> {
+                        ScannerManager.setScanner(scanner);
                         Worker worker = new WorkerForm(console).build();
                         if (!worker.validate()) throw new InvalidForm();
                         Response newResponse = client.sendAndAskResponse(
@@ -82,17 +83,11 @@ public class RuntimeManager {
                 }
             } catch (NoSuchElementException exception) {
                 console.printError("Пользовательский ввод не обнаружен.");
-            } catch (IllegalArgument exception) {
-                console.printError("Введены неправильные аргументы команды.");
-            } catch (NoCommand exception) {
-                console.printError("Такой команды не существует.");
             } catch (InvalidForm exception) {
                 console.printError("Поля не валидны. Объект не создан.");
             } catch (MustExit exception) {
                 console.printError("Выход из программы. Bye!");
                 return;
-            } catch (IOException exception) {
-                console.printError("Неизвестная ошибка.");
             }
         }
     }
@@ -144,10 +139,6 @@ public class RuntimeManager {
             console.printError("Файл не найден.");
         } catch (NoSuchElementException exception) {
             console.printError("Файл пустой.");
-        } catch (IllegalArgument exception) {
-            console.printError("Аргументы команд введены неверно.");
-        } catch (NoCommand exception) {
-            console.printError("Такой команды не существует.");
         } catch (RecursionScript exception) {
             Stack.clear();
             console.printError("Скрипт не может вызваться рекурсивно.");
