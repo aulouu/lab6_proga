@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="vse norm">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="otchet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,18 +57,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\target\lib" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\commands" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\managers" />
       <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\console" />
-      <recent name="C:\Users\Алина\IdeaProjects\lab6_proga\server\src\main\java\exceptions" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="console" />
       <recent name="managers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="client" />
@@ -117,8 +117,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +149,7 @@
       <workItem from="1683816432309" duration="136000" />
       <workItem from="1684055988222" duration="4734000" />
       <workItem from="1684062666089" duration="10780000" />
-      <workItem from="1684226894329" duration="7741000" />
+      <workItem from="1684226894329" duration="8407000" />
     </task>
     <task id="LOCAL-00001" summary="vvv">
       <created>1682846932394</created>
@@ -242,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684232588013</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add diagram">
+      <created>1684237366751</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684237366751</updated>
+    </task>
+    <task id="LOCAL-00015" summary="otchet">
+      <created>1684237575903</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684237575903</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +287,8 @@
     <MESSAGE value="fix all" />
     <MESSAGE value="ne otpravlyaet dannye" />
     <MESSAGE value="vse norm" />
-    <option name="LAST_COMMIT_MESSAGE" value="vse norm" />
+    <MESSAGE value="add diagram" />
+    <MESSAGE value="otchet" />
+    <option name="LAST_COMMIT_MESSAGE" value="otchet" />
   </component>
 </project>

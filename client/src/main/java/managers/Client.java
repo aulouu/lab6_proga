@@ -1,12 +1,10 @@
 package managers;
 
-import console.Console;
 import console.Print;
 import work.*;
 
 import java.io.*;
 import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.nio.channels.SocketChannel;
 import java.util.Objects;
 
@@ -96,6 +94,8 @@ public class Client {
             } catch (ClassNotFoundException exception) {
                 console.printError("Неизвестная ошибка.");
             }
+            if (socketChannel != null) socketChannel.close();
+            console.println("Работа клиента успешно завершена.");
         }
     }
 }
