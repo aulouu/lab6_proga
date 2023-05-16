@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="ne otpravlyaet dannye">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="vse norm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/RuntimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/RuntimeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/models/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/models/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/commands/FilterStartsWithNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/FilterStartsWithNameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +149,7 @@
       <workItem from="1683816432309" duration="136000" />
       <workItem from="1684055988222" duration="4734000" />
       <workItem from="1684062666089" duration="10780000" />
-      <workItem from="1684226894329" duration="5608000" />
+      <workItem from="1684226894329" duration="7741000" />
     </task>
     <task id="LOCAL-00001" summary="vvv">
       <created>1682846932394</created>
@@ -250,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684064634183</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="vse norm">
+      <created>1684232588013</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684232588013</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +272,7 @@
     <MESSAGE value="fix" />
     <MESSAGE value="fix all" />
     <MESSAGE value="ne otpravlyaet dannye" />
-    <option name="LAST_COMMIT_MESSAGE" value="ne otpravlyaet dannye" />
+    <MESSAGE value="vse norm" />
+    <option name="LAST_COMMIT_MESSAGE" value="vse norm" />
   </component>
 </project>
