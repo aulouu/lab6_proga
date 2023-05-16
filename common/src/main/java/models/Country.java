@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Варианты национальности для человека
  */
 
-public enum Country {
+public enum Country implements Serializable {
     GERMANY,
     VATICAN,
     ITALY,

@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Варианты позиции
  */
 
-public enum Position {
+public enum Position implements Serializable {
     HUMAN_RESOURCES,
     ENGINEER,
     HEAD_OF_DIVISION,

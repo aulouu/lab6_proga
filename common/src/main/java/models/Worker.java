@@ -1,5 +1,6 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayDeque;
@@ -9,7 +10,7 @@ import java.util.Objects;
  * Класс для рабочего
  */
 
-public class Worker implements Validator, Comparable<Worker> {
+public class Worker implements Validator, Comparable<Worker>, Serializable {
     private int id; //Значение поля должно быть больше 0, быть уникальным, генерироваться автоматически
     private String name; // Поле не может быть null, строка не может быть пустой
     private Coordinates coordinates; // Поле не может быть null

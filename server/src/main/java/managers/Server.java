@@ -1,6 +1,7 @@
 package managers;
 
 import console.*;
+import console.Console;
 import exceptions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,14 +19,18 @@ public class Server {
     private Print console;
     private ServerSocket serverSocket;
     private RequestHandler requestHandler;
+    private final FileManager fileManager;
+    private final CollectionManager collectionManager;
 
     static final Logger serverLogger = LoggerFactory.getLogger(Server.class);
 
-    public Server(int port, int soTimeout, RequestHandler requestHandler) {
+    public Server(int port, int soTimeout, RequestHandler requestHandler, FileManager fileManager, CollectionManager collectionManager) {
         this.port = port;
         this.soTimeout = soTimeout;
         this.requestHandler = requestHandler;
-        this.console = new EmptyConsole();
+        this.fileManager = fileManager;
+        this.collectionManager = collectionManager;
+        this.console = new Console();
     }
 
     /**
@@ -95,7 +100,6 @@ public class Server {
                 console.printError("Разрыв соединения с клиентом.");
                 serverLogger.error("Разрыв соединения с клиентом.");
             } else {
-                console.printError("Клиент отключен от сервера успешно.");
                 serverLogger.info("Клиент отключен от сервера успешно.");
             }
         }
@@ -108,11 +112,31 @@ public class Server {
     public void run() {
         try {
             open();
-            boolean processingStatus = true;
-            while (processingStatus) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            while (true) {
+                try {
+                    if (br.ready()) {
+                        String input = br.readLine();
+                        switch (input) {
+                            case "save" -> {
+                                fileManager.saveCollection(collectionManager.getCollection());
+                                serverLogger.info("Коллекция сохранена.");
+                            }
+                            case "exit" -> {
+                                fileManager.saveCollection(collectionManager.getCollection());
+                                stop();
+                                return;
+                            }
+                        }
+                    }
+                } catch (IOException exception) {
+                    console.printError("Ошибка при чтении.");
+                    serverLogger.error("Ошибка при чтении.");
+                }
                 try (Socket clientSocket = connectToClient()) {
-                    processingStatus = processClientRequest(clientSocket);
-                } catch (ConnectionError | SocketTimeoutException exception) {
+                    processClientRequest(clientSocket);
+                } catch (SocketTimeoutException ignored) {
+                } catch (ConnectionError exception) {
                     break;
                 } catch (IOException exception) {
                     console.printError("Произошла ошибка при попытке завершить соединение с клиентом.");

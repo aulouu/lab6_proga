@@ -37,8 +37,7 @@ public class Client {
             if (reconnectionAttempts > 0)
                 console.println("Повторное соединение с сервером...");
             socketChannel = SocketChannel.open(new InetSocketAddress(host, port));
-            console.println("Соединение с сервером установлено успешно.");
-            console.println("Ожидание разрешения на обмен данными...");
+            console.println("Вы подключены к серверу. Ожидайте разрешение на обмен данными...");
             serverWriter = new ObjectOutputStream(socketChannel.socket().getOutputStream());
             serverReader = new ObjectInputStream(socketChannel.socket().getInputStream());
             console.println("Разрешение на обмен данными получено.");
@@ -49,7 +48,7 @@ public class Client {
         }
     }
 
-    public void disconnectFromServer() {
+    /*public void disconnectFromServer() {
         try {
             this.socketChannel.close();
             this.serverReader.close();
@@ -58,60 +57,22 @@ public class Client {
         } catch (IOException e) {
             console.printError("Не подключен к серверу.");
         }
-    }
-
-    /*public Response sendAndAskResponse(Request request) throws IOException {
-        while (true) {
-            try {
-                if (reconnectionAttempts == 0) {
-                    connectToServer();
-                    reconnectionAttempts++;
-                    continue;
-                }
-                if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
-                serverWriter.writeObject(request);
-                //serverWriter.flush();
-                //serverWriter.close();
-                Response response = (Response) serverReader.readObject();
-                //serverReader.close();
-                this.disconnectFromServer();
-                reconnectionAttempts = 0;
-                return response;
-            } catch (IOException exception) {
-                if (reconnectionAttempts == 0) {
-                    connectToServer();
-                    reconnectionAttempts++;
-                    continue;
-                } else console.printError("Соединение с сервером разорвано.");
-                try {
-                    reconnectionAttempts++;
-                    if (reconnectionAttempts >= maxReconnectionAttempts) {
-                        console.printError("Превышено максимальное количество попыток соединения с сервером");
-                        return new Response(ResponseStatus.EXIT);
-                    }
-                    console.println("Повторная попытка...");
-                    Thread.sleep(reconnectionTimeout);
-                    connectToServer();
-                } catch (InterruptedException e) {
-                    console.printError("Неуспешное соединение с сервером.");
-                }
-            } catch (ClassNotFoundException exception) {
-                console.printError("Неизвестная ошибка.");
-            }
-        }
     }*/
 
-    public Response sendAndAskResponse (Request request) {
+    public Response sendAndAskResponse(Request request) throws IOException {
         while (true) {
             try {
+               /*if (reconnectionAttempts == 0) {
+                   connectToServer();
+                   reconnectionAttempts++;
+                   continue;
+               }*/
                 if(Objects.isNull(serverWriter) || Objects.isNull(serverReader)) throw new IOException();
                 if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
                 serverWriter.writeObject(request);
-                //serverWriter.flush();
-                //serverWriter.close();
+                serverWriter.flush();
                 Response response = (Response) serverReader.readObject();
-                //serverReader.close();
-                this.disconnectFromServer();
+                //this.disconnectFromServer();
                 reconnectionAttempts = 0;
                 return response;
             } catch (IOException exception) {

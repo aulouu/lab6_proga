@@ -154,12 +154,12 @@ public class CollectionManager {
         collectionManagerLogger.info("Элемент добавлен в коллекцию.");
     }
 
-    /**
+    /*/**
      * Метод для команды FilterByStatus
      *
      * @param status статус
      */
-    public void filterByStatus(Status status) {
+    /*public void filterByStatus(Status status) {
         boolean hasElement = false;
         for (Worker worker : collection) {
             if (worker.getStatus().equals(status)) {
@@ -169,14 +169,14 @@ public class CollectionManager {
         }
         if (!hasElement)
             collectionManagerLogger.info("Нет элемента с таким статусом.");
-    }
+    }*/
 
-    /**
+    /*/**
      * Метод для команды FilterStartsWithName
      *
      * @param str подстрока
      */
-    public void filterStartsWithName(String str) {
+    /*public void filterStartsWithName(String str) {
         boolean hasElement = false;
         for (Worker worker : collection) {
             if (worker.getName().startsWith(str)) {
@@ -186,7 +186,7 @@ public class CollectionManager {
         }
         if (!hasElement)
             collectionManagerLogger.info("Нет элемента, у которого имя начинается с заданной подстроки.");
-    }
+    }*/
 
     /**
      * Метод для команды Head

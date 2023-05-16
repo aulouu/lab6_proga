@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Варианты статуса
  */
 
-public enum Status {
+public enum Status implements Serializable {
     HIRED,
     RECOMMENDED_FOR_PROMOTION,
     REGULAR,

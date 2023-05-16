@@ -88,6 +88,8 @@ public class RuntimeManager {
             } catch (MustExit exception) {
                 console.printError("Выход из программы. Bye!");
                 return;
+            } catch (IOException exception) {
+                console.printError("Неизвестная ошибка.");
             }
         }
     }

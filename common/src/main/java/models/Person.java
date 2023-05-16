@@ -1,12 +1,13 @@
 package models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Класс человека
  */
 
-public class Person implements Validator {
+public class Person implements Validator, Serializable {
     private Integer height; // Поле не может быть null, значение поля должно быть больше 0
     private Color eyeColor; // Поле не может быть null
     private Country nationality; // Поле не может быть null

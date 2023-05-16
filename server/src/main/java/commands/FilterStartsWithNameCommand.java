@@ -5,6 +5,7 @@ import managers.*;
 import work.*;
 
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Команда, которая выводит элементы, значение поля name которых начинается с заданной подстроки
@@ -32,7 +33,7 @@ public class FilterStartsWithNameCommand extends Command {
                 collectionManager.getCollection().stream()
                         .filter(Objects::nonNull)
                         .filter(worker -> worker.getName().startsWith(request.getArgs()))
-                        .map(Objects::toString));
+                        .map(Objects::toString).collect(Collectors.joining(", ")));
         //collectionManager.filterStartsWithName();
     }
 }

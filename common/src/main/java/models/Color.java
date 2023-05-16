@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Варианты цвета глаз для человека
  */
 
-public enum Color {
+public enum Color implements Serializable {
     GREEN,
     BLACK,
     YELLOW,

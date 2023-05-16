@@ -1,5 +1,5 @@
 import commands.*;
-import console.EmptyConsole;
+import console.*;
 import console.Print;
 import managers.*;
 
@@ -8,7 +8,7 @@ import java.util.List;
 public class App {
     public static int port = 6090;
     public static final int connection_timeout = 60 * 1000;
-    private static final Print console = new EmptyConsole();
+    private static final Print console = new Console();
 
     public static void main(String[] args) {
         //console = new Console();
@@ -43,7 +43,7 @@ public class App {
         ));
 
         RequestHandler requestHandler = new RequestHandler(commandManager);
-        Server server = new Server(port, connection_timeout, requestHandler);
+        Server server = new Server(port, connection_timeout, requestHandler, fileManager, collectionManager);
         server.run();
     }
 }

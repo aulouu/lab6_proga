@@ -1,12 +1,13 @@
 package models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Класс локации для человека
  */
 
-public class Location implements Validator {
+public class Location implements Validator, Serializable {
     private Integer x; // Поле не может быть null
     private Float y; // Поле не может быть null
     private String name; // Строка не может быть пустой
