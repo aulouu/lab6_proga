@@ -12,6 +12,9 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.Random;
+
+import static java.lang.Thread.*;
 
 public class Server {
     private int port;
@@ -107,25 +110,22 @@ public class Server {
     }
 
     class MyThread implements Runnable {
-        Thread thread;
-        MyThread() {
-            thread = new Thread();
-            thread.start();
-        }
         @Override
         public void run() {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             try {
-                if (br.ready()) {
-                    String input = br.readLine();
-                    switch (input) {
-                        case "save" -> {
-                            fileManager.saveCollection(collectionManager.getCollection());
-                            serverLogger.info("Коллекция сохранена.");
-                        }
-                        case "exit" -> {
-                            fileManager.saveCollection(collectionManager.getCollection());
-                            stop();
+                while(true) {
+                    if (br.ready()) {
+                        String input = br.readLine();
+                        switch (input) {
+                            case "save" -> {
+                                fileManager.saveCollection(collectionManager.getCollection());
+                                serverLogger.info("Коллекция сохранена.");
+                            }
+                            case "exit" -> {
+                                fileManager.saveCollection(collectionManager.getCollection());
+                                stop();
+                            }
                         }
                     }
                 }
@@ -142,24 +142,8 @@ public class Server {
     public void runServer() {
         try {
             open();
-            //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            new Thread(new MyThread()).start();
             while (true) {
-                MyThread myThread = new MyThread();
-                myThread.run();
-                /*if (br.ready()) {
-                    String input = br.readLine();
-                    switch (input) {
-                        case "save" -> {
-                            fileManager.saveCollection(collectionManager.getCollection());
-                            serverLogger.info("Коллекция сохранена.");
-                        }
-                        case "exit" -> {
-                            fileManager.saveCollection(collectionManager.getCollection());
-                            stop();
-                            return;
-                        }
-                    }
-                }*/
                 try (Socket clientSocket = connectToClient()) {
                     processClientRequest(clientSocket);
                 } catch (SocketTimeoutException ignored) {
