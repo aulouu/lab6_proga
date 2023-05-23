@@ -139,7 +139,7 @@ public class Server {
     /**
      * Начало работы сервера
      */
-    public void run() {
+    public void runServer() {
         try {
             open();
             //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

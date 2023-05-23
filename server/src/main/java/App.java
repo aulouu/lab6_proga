@@ -44,6 +44,6 @@ public class App {
 
         RequestHandler requestHandler = new RequestHandler(commandManager);
         Server server = new Server(port, connection_timeout, requestHandler, fileManager, collectionManager);
-        server.run();
+        server.runServer();
     }
 }
