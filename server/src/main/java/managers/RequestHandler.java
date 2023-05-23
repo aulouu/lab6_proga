@@ -1,6 +1,9 @@
 package managers;
 
+import commands.Command;
+import commands.HelpCommand;
 import exceptions.*;
+import models.Worker;
 import work.*;
 
 public class RequestHandler {

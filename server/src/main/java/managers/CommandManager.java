@@ -2,10 +2,14 @@ package managers;
 
 import commands.*;
 import exceptions.*;
+import models.Worker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import work.*;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.stream.Collectors;
@@ -57,6 +61,8 @@ public class CommandManager {
         if (command instanceof EditCollection) {
             fileManager.saveCollection(collectionManager.getCollection());
         }
+        //if (!request.equals("help")) throw new NoCommand();
         return response;
     }
 }
+

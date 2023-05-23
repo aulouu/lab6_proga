@@ -84,7 +84,7 @@ public class Server {
             do {
                 userRequest = (Request) clientReader.readObject();
                 responseToUser = requestHandler.handle(userRequest);
-                serverLogger.info("Запрос " + userRequest.getCommandName() + " обработан успешно.");
+                serverLogger.info("Запрос обработан успешно." /*+ userRequest.getCommandName() + " обработан успешно."*/);
                 clientWriter.writeObject(responseToUser);
                 clientWriter.flush();
             } while (responseToUser.getResponseStatus() != ResponseStatus.EXIT);
@@ -106,33 +106,60 @@ public class Server {
         return true;
     }
 
+    class MyThread implements Runnable {
+        Thread thread;
+        MyThread() {
+            thread = new Thread();
+            thread.start();
+        }
+        @Override
+        public void run() {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                if (br.ready()) {
+                    String input = br.readLine();
+                    switch (input) {
+                        case "save" -> {
+                            fileManager.saveCollection(collectionManager.getCollection());
+                            serverLogger.info("Коллекция сохранена.");
+                        }
+                        case "exit" -> {
+                            fileManager.saveCollection(collectionManager.getCollection());
+                            stop();
+                        }
+                    }
+                }
+            } catch (IOException exception) {
+                console.printError("Ошибка при чтении.");
+                serverLogger.error("Ошибка при чтении.");
+            }
+        }
+    }
+
     /**
      * Начало работы сервера
      */
     public void run() {
         try {
             open();
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             while (true) {
-                try {
-                    if (br.ready()) {
-                        String input = br.readLine();
-                        switch (input) {
-                            case "save" -> {
-                                fileManager.saveCollection(collectionManager.getCollection());
-                                serverLogger.info("Коллекция сохранена.");
-                            }
-                            case "exit" -> {
-                                fileManager.saveCollection(collectionManager.getCollection());
-                                stop();
-                                return;
-                            }
+                MyThread myThread = new MyThread();
+                myThread.run();
+                /*if (br.ready()) {
+                    String input = br.readLine();
+                    switch (input) {
+                        case "save" -> {
+                            fileManager.saveCollection(collectionManager.getCollection());
+                            serverLogger.info("Коллекция сохранена.");
+                        }
+                        case "exit" -> {
+                            fileManager.saveCollection(collectionManager.getCollection());
+                            stop();
+                            return;
                         }
                     }
-                } catch (IOException exception) {
-                    console.printError("Ошибка при чтении.");
-                    serverLogger.error("Ошибка при чтении.");
-                }
+                }*/
                 try (Socket clientSocket = connectToClient()) {
                     processClientRequest(clientSocket);
                 } catch (SocketTimeoutException ignored) {
