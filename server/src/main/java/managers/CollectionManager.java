@@ -4,6 +4,7 @@ import exceptions.*;
 import models.*;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import work.Request;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -176,10 +177,10 @@ public class CollectionManager {
      *
      * @param str подстрока
      */
-    /*public void filterStartsWithName(String str) {
+    /*public void filterStartsWithName(Request request) {
         boolean hasElement = false;
         for (Worker worker : collection) {
-            if (worker.getName().startsWith(str)) {
+            if (worker.getName().startsWith(request.getArgs())) {
                 collectionManagerLogger.info(worker.toString());
                 hasElement = true;
             }

@@ -6,6 +6,7 @@ import models.*;
 import work.*;
 
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Команда, которая выводит элементы, значение поля status которых равно заданному
@@ -34,8 +35,7 @@ public class FilterByStatusCommand extends Command {
                     collectionManager.getCollection().stream()
                             .filter(Objects::nonNull)
                             .filter(worker -> worker.getStatus().equals(status))
-                            .map(Objects::toString));
-            //collectionManager.filterByStatus();
+                            .map(Objects::toString).collect(Collectors.joining(", ")));
         } catch (IllegalArgumentException exception) {
             return new Response(ResponseStatus.ERROR, "Такой статус недоступен.");
         }

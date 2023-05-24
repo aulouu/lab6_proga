@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="see thread">
+    <list default="true" id="1cf8d4ba-4a07-4c3c-89c9-29080b1a5fb6" name="Changes" comment="fix save/exit server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/managers/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/commands/FilterByStatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/FilterByStatusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/commands/FilterStartsWithNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/commands/FilterStartsWithNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/managers/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +76,7 @@
       <recent name="managers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="client" />
@@ -159,7 +165,7 @@
       <workItem from="1684271985907" duration="2239000" />
       <workItem from="1684317012509" duration="4472000" />
       <workItem from="1684342166621" duration="10435000" />
-      <workItem from="1684828322385" duration="5313000" />
+      <workItem from="1684828322385" duration="14745000" />
     </task>
     <task id="LOCAL-00001" summary="vvv">
       <created>1682846932394</created>
@@ -287,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684831375483</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix save/exit server">
+      <created>1684870425443</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684870425443</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +335,7 @@
     <MESSAGE value="fix" />
     <MESSAGE value="thread" />
     <MESSAGE value="see thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="see thread" />
+    <MESSAGE value="fix save/exit server" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix save/exit server" />
   </component>
 </project>

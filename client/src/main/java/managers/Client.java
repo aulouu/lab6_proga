@@ -46,31 +46,14 @@ public class Client {
         }
     }
 
-    /*public void disconnectFromServer() {
-        try {
-            this.socketChannel.close();
-            this.serverReader.close();
-            this.serverWriter.close();
-            console.println("Работа клиента успешно завершена.");
-        } catch (IOException e) {
-            console.printError("Не подключен к серверу.");
-        }
-    }*/
-
     public Response sendAndAskResponse(Request request) throws IOException {
         while (true) {
             try {
-               /*if (reconnectionAttempts == 0) {
-                   connectToServer();
-                   reconnectionAttempts++;
-                   continue;
-               }*/
                 if(Objects.isNull(serverWriter) || Objects.isNull(serverReader)) throw new IOException();
                 if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
                 serverWriter.writeObject(request);
                 serverWriter.flush();
                 Response response = (Response) serverReader.readObject();
-                //this.disconnectFromServer();
                 reconnectionAttempts = 0;
                 return response;
             } catch (IOException exception) {

@@ -28,12 +28,13 @@ public class FilterStartsWithNameCommand extends Command {
     @Override
     public Response execute(Request request) throws IllegalArgument {
         if (request.getArgs().isBlank()) throw new IllegalArgument();
-        //var str = String.valueOf(request.getArgs().trim());
-        return new Response(ResponseStatus.OK, "Соответствующие элементы: " +
-                collectionManager.getCollection().stream()
-                        .filter(Objects::nonNull)
-                        .filter(worker -> worker.getName().startsWith(request.getArgs()))
-                        .map(Objects::toString).collect(Collectors.joining(", ")));
-        //collectionManager.filterStartsWithName();
+        String result = collectionManager.getCollection().stream()
+                .filter(Objects::nonNull)
+                .filter(worker -> worker.getName().startsWith(request.getArgs()))
+                .map(Objects::toString).collect(Collectors.joining(", "));
+        if(result.isEmpty())
+            return  new Response(ResponseStatus.ERROR, "Нет таких элементов.");
+        return new Response(ResponseStatus.OK, "Соответствующие элементы: " + result);
     }
 }
+

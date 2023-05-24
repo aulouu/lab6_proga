@@ -13,6 +13,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static java.lang.Thread.*;
 
@@ -26,6 +28,7 @@ public class Server {
     private final CollectionManager collectionManager;
 
     static final Logger serverLogger = LoggerFactory.getLogger(Server.class);
+    private final ExecutorService executor = Executors.newCachedThreadPool();
 
     public Server(int port, int soTimeout, RequestHandler requestHandler, FileManager fileManager, CollectionManager collectionManager) {
         this.port = port;
@@ -79,34 +82,38 @@ public class Server {
     /**
      * Получение запроса от клиента
      */
-    private boolean processClientRequest(Socket clientSocket) {
-        Request userRequest = null;
-        Response responseToUser = null;
-        try (ObjectInputStream clientReader = new ObjectInputStream(clientSocket.getInputStream());
-             ObjectOutputStream clientWriter = new ObjectOutputStream(clientSocket.getOutputStream())) {
-            do {
-                userRequest = (Request) clientReader.readObject();
-                responseToUser = requestHandler.handle(userRequest);
-                serverLogger.info("Запрос обработан успешно." /*+ userRequest.getCommandName() + " обработан успешно."*/);
-                clientWriter.writeObject(responseToUser);
-                clientWriter.flush();
-            } while (responseToUser.getResponseStatus() != ResponseStatus.EXIT);
-            return false;
-        } catch (ClassNotFoundException exception) {
-            console.printError("Произошла ошибка при чтении данных.");
-            serverLogger.error("Произошла ошибка при чтении данных.");
-        } catch (InvalidClassException | NotSerializableException exception) {
-            console.printError("Произошла ошибка при отправке данных.");
-            serverLogger.error("Произошла ошибка при отправке данных.");
-        } catch (IOException exception) {
-            if (userRequest == null) {
-                console.printError("Разрыв соединения с клиентом.");
-                serverLogger.error("Разрыв соединения с клиентом.");
-            } else {
-                serverLogger.info("Клиент отключен от сервера успешно.");
+    private void processClientRequest(Socket clientSocket) {
+        executor.submit(() -> {
+            Request userRequest = null;
+            Response responseToUser = null;
+            try (ObjectInputStream clientReader = new ObjectInputStream(clientSocket.getInputStream());
+                 ObjectOutputStream clientWriter = new ObjectOutputStream(clientSocket.getOutputStream())) {
+                do {
+                    userRequest = (Request) clientReader.readObject();
+                    responseToUser = requestHandler.handle(userRequest);
+                    //serverLogger.info("Запрос обработан успешно." /*+ userRequest.getCommandName() + " обработан успешно."*/);
+                    clientWriter.writeObject(responseToUser);
+                    clientWriter.flush();
+                } while (responseToUser.getResponseStatus() != ResponseStatus.EXIT);
+                clientSocket.close();
+                //return false;
+            } catch (ClassNotFoundException exception) {
+                console.printError("Произошла ошибка при чтении данных.");
+                serverLogger.error("Произошла ошибка при чтении данных.");
+            } catch (InvalidClassException | NotSerializableException exception) {
+                console.printError("Произошла ошибка при отправке данных.");
+                serverLogger.error("Произошла ошибка при отправке данных.");
+            } catch (IOException exception) {
+                if (userRequest == null) {
+                    console.printError("Разрыв соединения с клиентом.");
+                    serverLogger.error("Разрыв соединения с клиентом.");
+                } else {
+                    serverLogger.info("Клиент отключен от сервера успешно.");
+                }
             }
-        }
-        return true;
+            //return true;
+        });
+
     }
 
     class MyThread implements Runnable {
@@ -144,8 +151,8 @@ public class Server {
             open();
             new Thread(new MyThread()).start();
             while (true) {
-                try (Socket clientSocket = connectToClient()) {
-                    processClientRequest(clientSocket);
+                try  {
+                    processClientRequest(connectToClient());
                 } catch (SocketTimeoutException ignored) {
                 } catch (ConnectionError exception) {
                     break;

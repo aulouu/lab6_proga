@@ -28,6 +28,7 @@ public class App {
         if (!initializeConnectionAddress(args)) return;
         //console = new Console();
         Client client = new Client(host, port, 10000, 5, console);
+        client.connectToServer();
         new RuntimeManager(console, new Scanner(System.in), client).runTime();
     }
 }
